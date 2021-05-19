@@ -9,9 +9,9 @@ module.exports = {
 
   attributes: {
 
-    sale: { type: 'number', required: true },
-    inventory: { type: 'number', required: true },
     amount: { type: 'number', required: true },
+    inventory: { model: 'Inventory', unique: true },
+    sale: { model: 'Sale', unique: true },
 
   },
 

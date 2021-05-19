@@ -9,12 +9,13 @@ module.exports = {
 
   attributes: {
 
-    product: { type: 'number', required: true },
     purchasePrice: { type: 'number', required: true },
     salePrice: { type: 'number', required: true },
     registerUser: { type: 'number', required: true },
     modifyUser: { type: 'string', required: true },
     stock: { type: 'number', required: true },
+    product: { model: 'Product', unique: true },
+    saleProduct: { collection: 'SaleProduct', via: 'inventory' }
 
   },
 

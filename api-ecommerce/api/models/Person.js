@@ -17,6 +17,8 @@ module.exports = {
     phone: { type: 'string', required: true },
     address: { type: 'string', required: true },
     city: { type: 'string', required: true },
+    user: { collection: 'User', via: 'person' },
+    client: { collection: 'Client', via: 'person' }
 
   },
 

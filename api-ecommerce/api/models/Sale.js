@@ -9,8 +9,9 @@ module.exports = {
 
   attributes: {
 
-    client: { type: 'number', required: true },
-    saleDate: { type: 'string', required: true },
+    client: { model: 'Client', unique: true },
+    saleDate: { type: 'number', required: true },
+    saleProduct: {collection: 'SaleProduct', via: 'sale'}
 
   },
 

@@ -32,19 +32,27 @@ module.exports = {
 
   // create: (req, res) => {
   //   // sails.log.debug(req.allParams())
-  //   Usuario.create(req.allParams())
-  //     .then((usuario) => {
-  //       return res.send({
-  //         'success': true,
-  //         'message': 'Usuario creado exitosamente.',
-  //         'data': usuario,
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       return res.send({
-  //         'success': false,
-  //         'message': 'Error en la solicitud:' + error,
-  //       })
+
+
+  //   let parametros = req.allParams();
+  //   sails.helpers.passwords.hashPassword(parametros.clave)
+  //     .then((cifrada) => {
+  //       parametros.clave = cifrada
+
+  //       Usuario.create(parametros)
+  //         .then((usuario) => {
+  //           return res.send({
+  //             'success': true,
+  //             'message': 'Usuario creado exitosamente.',
+  //             'data': usuario,
+  //           })
+  //         })
+  //         .catch((error) => {
+  //           return res.send({
+  //             'success': false,
+  //             'message': 'Error en la solicitud:' + error,
+  //           })
+  //         })
   //     })
   // },
 

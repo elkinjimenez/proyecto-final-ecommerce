@@ -9,8 +9,8 @@ module.exports = {
 
   attributes: {
 
-    person: { type: 'number', required: true },
     gender: { type: 'string', required: true },
+    person: { model: 'Person', unique: true },
 
   },
 

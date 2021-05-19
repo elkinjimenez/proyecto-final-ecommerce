@@ -13,6 +13,7 @@ module.exports = {
     state: { type: 'boolean', required: true },
     registerUser: { type: 'string', required: true },
     modifyUser: { type: 'string', required: true },
+    product: {collection: 'Product', via: 'category'}
 
   },
 
