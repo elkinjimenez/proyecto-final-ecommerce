@@ -35,9 +35,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
  
-  'GET /api/usuario': 'UsuarioController.get',
-  'POST /api/usuario': 'UsuarioController.create',
-  'POST /api/usuario/logueo': 'UsuarioController.login',
   'PUT /api/usuario/:id': 'UsuarioController.update',
   'DELETE /api/usuario/:id': 'UsuarioController.delete',
 
