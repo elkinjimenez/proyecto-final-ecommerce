@@ -1,12 +1,10 @@
 <button mat-raised-button color="primary" routerLink="/dashboard/category/create">Crear categoría</button>
-<mat-list role="list">
-  <mat-list-item class="items-between" *ngFor="let c of listCategory" role="listitem">
-    <div>
-      {{c.name}}
-    </div>
-    <div>
-      <button mat-raised-button color="primary" routerLink="/dashboard/category/create">Editar</button>
-      <button mat-raised-button color="warn" routerLink="/dashboard/category/create">Eliminar</button>
-    </div>
-  </mat-list-item>
-</mat-list>
+<div *ngFor="let c of _category.listCategory" class="items-between myCard">
+  <div>
+    <h2>{{c.name}}</h2>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" routerLink="/dashboard/category/edit/{{c.id}}">Editar</button>
+    <button mat-raised-button color="warn">Inactivar</button>
+  </div>
+</div>

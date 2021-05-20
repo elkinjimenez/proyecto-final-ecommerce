@@ -9,7 +9,28 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.myCard{
+  margin: 10px 5px;
+  border: 1px solid #717bff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .items-between {
-  flex-flow: column wrap;
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.items-center {
+  display: flex !important;
   justify-content: center;
+  text-align: center;
+}
+
+button {
+  margin: 0 5px !important;
+}
+
+h2 {
+  margin: 0 !important;
 }

@@ -1,9 +1,16 @@
-<form [formGroup]="rFormsCategory">
-  <mat-form-field appearance="fill">
-    <mat-label>Nombre</mat-label>
-    <input formControlName="name" matInput>
-  </mat-form-field>
-  <div>
-    <button (click)="crearCategoria()" [disabled]="!rFormsCategory.valid" mat-raised-button color="primary">Crear categoría</button>
-  </div>
-</form>
+<div class="items-center" style="margin-top: 40px;">
+  <form [formGroup]="rFormsCategory">
+    <h1><span *ngIf="idCategory == undefined">¡Crear</span> <span *ngIf="idCategory != undefined">¡Editar</span>
+      categoría!</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+    <div>
+      <button (click)="crearCategoria()" [disabled]="!rFormsCategory.valid" mat-raised-button color="primary">
+        <span *ngIf="idCategory == undefined">Crear</span> <span *ngIf="idCategory != undefined">Editar</span>
+        categoría
+      </button>
+    </div>
+  </form>
+</div>

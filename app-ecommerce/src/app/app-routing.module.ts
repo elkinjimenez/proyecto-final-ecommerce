@@ -6,6 +6,7 @@ import { ListCategoryComponent } from './Admin/category/list-category/list-categ
 const routes: Routes = [
   { path: 'dashboard/category/list', component: ListCategoryComponent },
   { path: 'dashboard/category/create', component: FormCategoryComponent },
+  { path: 'dashboard/category/edit/:id', component: FormCategoryComponent },
 ];
 
 @NgModule({

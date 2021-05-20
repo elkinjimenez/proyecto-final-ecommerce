@@ -10,24 +10,10 @@ import { CategoryService } from 'src/app/Services/category.service';
 })
 export class ListCategoryComponent implements OnInit {
 
-  listCategory = [] as Category[];
-
   constructor(
     public _category: CategoryService,
   ) { }
 
-  ngOnInit(): void {
-    this._category.listCategory().subscribe(
-      data => {
-        console.log('Listado de categorías: ', data);
-        let resp = data as RespGeneral;
-        if (resp.success == true) {
-          this.listCategory = resp.data;
-        } else {
-
-        }
-      }
-    )
-  }
+  ngOnInit(): void { }
 
 }
