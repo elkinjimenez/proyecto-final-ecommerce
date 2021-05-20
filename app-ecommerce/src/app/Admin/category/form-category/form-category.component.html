@@ -1,0 +1,9 @@
+<form [formGroup]="rFormsCategory">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+  <div>
+    <button (click)="crearCategoria()" [disabled]="!rFormsCategory.valid" mat-raised-button color="primary">Crear categoría</button>
+  </div>
+</form>

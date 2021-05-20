@@ -41,4 +41,7 @@ module.exports.routes = {
   'PUT /api/usuario/:id': 'UsuarioController.update',
   'DELETE /api/usuario/:id': 'UsuarioController.delete',
 
+  'GET /api/category/list': 'CategoryController.listCategory',
+  'POST /api/category/create': 'CategoryController.create'
+
 };
