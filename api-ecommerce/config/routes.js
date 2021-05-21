@@ -45,4 +45,6 @@ module.exports.routes = {
   'GET /api/product/list': 'ProductController.list',
   'POST /api/product/create': 'ProductController.create',
   'PUT /api/product/update/:id': 'ProductController.update',
+
+  'GET /api/sale/list': 'SaleController.list',
 };

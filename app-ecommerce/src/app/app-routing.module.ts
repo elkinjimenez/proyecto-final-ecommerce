@@ -5,8 +5,16 @@ import { ListCategoryComponent } from './Admin/category/list-category/list-categ
 import { AddStockProductComponent } from './Admin/product/add-stock-product/add-stock-product.component';
 import { FormProductComponent } from './Admin/product/form-product/form-product.component';
 import { ListProductComponent } from './Admin/product/list-product/list-product.component';
+import { ListSaleComponent } from './Admin/sale/list-sale/list-sale.component';
+import { ProductsComponent } from './Public/products/products.component';
+import { ShoppingCartComponent } from './Public/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
+  // PUBLIC
+  { path: 'products', component: ProductsComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
+
+  // PRIVATE
   { path: 'dashboard/category/list', component: ListCategoryComponent },
   { path: 'dashboard/category/create', component: FormCategoryComponent },
   { path: 'dashboard/category/edit/:id', component: FormCategoryComponent },
@@ -15,6 +23,8 @@ const routes: Routes = [
   { path: 'dashboard/product/create', component: FormProductComponent },
   { path: 'dashboard/product/edit/:id', component: FormProductComponent },
   { path: 'dashboard/product/stock/:id', component: AddStockProductComponent },
+
+  { path: 'dashboard/sales/list', component: ListSaleComponent },
 ];
 
 @NgModule({

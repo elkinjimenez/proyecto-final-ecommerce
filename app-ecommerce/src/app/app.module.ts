@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './Admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PublicModule } from './Public/public.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     AdminModule,
+    PublicModule,
     HttpClientModule
   ],
   providers: [],

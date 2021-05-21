@@ -10,6 +10,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 import { FormProductComponent } from './product/form-product/form-product.component';
 import { ListProductComponent } from './product/list-product/list-product.component';
 import { AddStockProductComponent } from './product/add-stock-product/add-stock-product.component';
+import { ListSaleComponent } from './sale/list-sale/list-sale.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddStockProductComponent } from './product/add-stock-product/add-stock-
     FormCategoryComponent,
     FormProductComponent,
     ListProductComponent,
-    AddStockProductComponent
+    AddStockProductComponent,
+    ListSaleComponent
   ],
   imports: [
     CommonModule,

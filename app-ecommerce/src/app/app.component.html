@@ -1,1 +1,6 @@
-<app-dashboard></app-dashboard>
+<div *ngIf="private">
+  <app-dashboard></app-dashboard>
+</div>
+<div *ngIf="!private">
+  <app-landing-pages></app-landing-pages>
+</div>
