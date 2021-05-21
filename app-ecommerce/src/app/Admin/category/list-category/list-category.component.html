@@ -1,10 +1,11 @@
 <button mat-raised-button color="primary" routerLink="/dashboard/category/create">Crear categoría</button>
-<div *ngFor="let c of _category.listCategory" class="items-between myCard">
+<div *ngFor="let c of _myService.listAll" class="items-between myCard">
   <div>
     <h2>{{c.name}}</h2>
   </div>
   <div>
     <button mat-raised-button color="primary" routerLink="/dashboard/category/edit/{{c.id}}">Editar</button>
-    <button mat-raised-button color="warn">Inactivar</button>
+    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Inactivar</button>
+    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Activar</button>
   </div>
 </div>

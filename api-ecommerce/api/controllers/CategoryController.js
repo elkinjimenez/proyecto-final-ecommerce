@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  listCategory: (req, res) => {
+  list: (req, res) => {
     Category.find()
       .then((category) => {
         if (!category || category.lenght == 0) {
@@ -37,6 +37,23 @@ module.exports = {
         return res.send({
           'success': true,
           'message': 'Categoría creada exitosamente.',
+          'data': category,
+        })
+      })
+      .catch((error) => {
+        return res.send({
+          'success': false,
+          'message': 'Error en la solicitud:' + error,
+        })
+      })
+  },
+
+  update: (req, res) => {
+    Category.update(req.param('id'), req.allParams())
+      .then((category) => {
+        return res.send({
+          'success': true,
+          'message': 'Categoría actualizada exitosamente.',
           'data': category,
         })
       })

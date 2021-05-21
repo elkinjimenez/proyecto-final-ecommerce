@@ -1,0 +1,52 @@
+<div class="items-center" style="margin-top: 40px;">
+  <form [formGroup]="rFormsObj">
+    <!-- <h1 *ngIf="idCategory == undefined">¡Crear categoría!</h1>
+    <h1 *ngIf="idCategory != undefined">¡Editar categoría!</h1> -->
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="name" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Cantidad</mat-label>
+        <input formControlName="amount" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Precio</mat-label>
+        <input type="number" formControlName="price" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Marca</mat-label>
+        <input formControlName="brand" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let c of _myC.listAll" value="{{c.id}}">{{c.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <button (click)="create()" *ngIf="idObj == undefined" [disabled]="!rFormsObj.valid" mat-raised-button
+        color="primary">Crear categoría
+      </button>
+      <button (click)="update()" *ngIf="idObj != undefined" [disabled]="!rFormsObj.valid" mat-raised-button
+        color="primary">Editar categoría
+      </button>
+    </div>
+  </form>
+</div>

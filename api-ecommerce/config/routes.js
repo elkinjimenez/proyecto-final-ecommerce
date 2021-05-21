@@ -34,11 +34,15 @@ module.exports.routes = {
   * not match any of those, it is matched against static assets.             *
   *                                                                          *
   ***************************************************************************/
- 
+
   'PUT /api/usuario/:id': 'UsuarioController.update',
   'DELETE /api/usuario/:id': 'UsuarioController.delete',
 
-  'GET /api/category/list': 'CategoryController.listCategory',
-  'POST /api/category/create': 'CategoryController.create'
+  'GET /api/category/list': 'CategoryController.list',
+  'POST /api/category/create': 'CategoryController.create',
+  'PUT /api/category/update/:id': 'CategoryController.update',
+
+  'GET /api/product/list': 'ProductController.list',
+  'POST /api/product/create': 'ProductController.create'
 
 };

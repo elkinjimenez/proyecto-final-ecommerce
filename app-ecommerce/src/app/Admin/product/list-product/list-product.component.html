@@ -1,0 +1,10 @@
+<button mat-raised-button color="primary" routerLink="/dashboard/product/create">Crear producto</button>
+<div *ngFor="let c of _myService.listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.name}}</h2>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" routerLink="/dashboard/product/edit/{{c.id}}">Editar</button>
+    <button (click)="remove()" mat-raised-button color="warn">Inactivar</button>
+  </div>
+</div>

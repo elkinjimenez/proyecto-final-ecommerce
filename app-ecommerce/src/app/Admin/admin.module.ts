@@ -7,12 +7,16 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormCategoryComponent } from './category/form-category/form-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { FormProductComponent } from './product/form-product/form-product.component';
+import { ListProductComponent } from './product/list-product/list-product.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     ListCategoryComponent,
-    FormCategoryComponent
+    FormCategoryComponent,
+    FormProductComponent,
+    ListProductComponent
   ],
   imports: [
     CommonModule,

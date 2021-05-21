@@ -11,17 +11,18 @@ import { CategoryService } from 'src/app/Services/category.service';
 })
 export class FormCategoryComponent implements OnInit {
 
-  rFormsCategory: FormGroup;
-  idCategory: number;
+  rFormsObj: FormGroup;
+  idObj: number;
+  obj = {} as Category;
 
   constructor(
     private fb: FormBuilder,
-    public _category: CategoryService,
+    public _myService: CategoryService,
     private route: ActivatedRoute,
     private ro: Router,
   ) {
-    this.idCategory = this.route.snapshot.params.id;
-    this.rFormsCategory = fb.group({
+    this.idObj = this.route.snapshot.params.id;
+    this.rFormsObj = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z]+')])]
     })
   }
@@ -31,11 +32,11 @@ export class FormCategoryComponent implements OnInit {
   }
 
   buscarCategoria() {
-    if (this._category.listCategory.length > 0) {
-      let cat = this._category.listCategory.find(x => x.id == this.idCategory);
-      console.log('ID: ', this.idCategory);
+    if (this._myService.listAll.length > 0) {
+      let cat = this._myService.listAll.find(x => x.id == this.idObj);
       if (cat) {
-        this.rFormsCategory.patchValue(
+        this.obj = cat;
+        this.rFormsObj.patchValue(
           {
             'name': cat.name,
           }
@@ -49,19 +50,29 @@ export class FormCategoryComponent implements OnInit {
   };
 
   crearCategoria() {
-    console.log('Prueba: ', this.rFormsCategory.controls['name'].value);
+    console.log('Prueba: ', this.rFormsObj.controls['name'].value);
     let cat = {
-      name: this.rFormsCategory.controls['name'].value,
+      name: this.rFormsObj.controls['name'].value,
       registerUser: 'ELKIN',
       state: true,
       createdAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
       updatedAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
       modifyUser: 'FELIPE'
     } as Category;
-    this._category.createCategory(cat).subscribe(
+    this._myService.createCategory(cat).subscribe(
       data => {
         console.log('Crear categoría: ', data);
-        this._category.getCategories();
+        this._myService.getList();
+        this.ro.navigate(['/dashboard/category/list']);
+      }
+    )
+  }
+
+  update() {
+    this.obj.name = this.rFormsObj.controls['name'].value;
+    this._myService.update(this.obj).subscribe(
+      data => {
+        console.log('Update Obj: ', data);
         this.ro.navigate(['/dashboard/category/list']);
       }
     )

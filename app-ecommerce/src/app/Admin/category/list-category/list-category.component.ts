@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/Interfaces/category';
-import { RespGeneral } from 'src/app/Interfaces/resp-general';
 import { CategoryService } from 'src/app/Services/category.service';
 
 @Component({
@@ -11,9 +9,19 @@ import { CategoryService } from 'src/app/Services/category.service';
 export class ListCategoryComponent implements OnInit {
 
   constructor(
-    public _category: CategoryService,
+    public _myService: CategoryService,
   ) { }
 
   ngOnInit(): void { }
+
+  remove(id: number) {
+    let obj = this._myService.listAll.find(x => x.id == id);
+    obj.state = !obj.state;
+    this._myService.update(obj).subscribe(
+      data => {
+        console.log('Actualizar obj: ', data);
+      }
+    )
+  }
 
 }
