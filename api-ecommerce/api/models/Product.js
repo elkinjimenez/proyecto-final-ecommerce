@@ -18,7 +18,6 @@ module.exports = {
     category: { model: 'Category', unique: true },
     stock: { type: 'number', required: true },
     price: { type: 'number', required: true },
-    inventory: { collection: 'Inventory', via: 'product' }
 
   },
 

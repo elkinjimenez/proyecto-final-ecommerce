@@ -4,6 +4,7 @@
     <h2>{{c.name}}</h2>
   </div>
   <div>
+    <button mat-raised-button color="primary" routerLink="/dashboard/product/stock/{{c.id}}">Stock ({{c.stock}})</button>
     <button mat-raised-button color="primary" routerLink="/dashboard/product/edit/{{c.id}}">Editar</button>
     <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Inactivar</button>
     <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Activar</button>

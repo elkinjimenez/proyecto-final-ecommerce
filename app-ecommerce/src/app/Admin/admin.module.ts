@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { FormProductComponent } from './product/form-product/form-product.component';
 import { ListProductComponent } from './product/list-product/list-product.component';
+import { AddStockProductComponent } from './product/add-stock-product/add-stock-product.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListProductComponent } from './product/list-product/list-product.compon
     ListCategoryComponent,
     FormCategoryComponent,
     FormProductComponent,
-    ListProductComponent
+    ListProductComponent,
+    AddStockProductComponent
   ],
   imports: [
     CommonModule,

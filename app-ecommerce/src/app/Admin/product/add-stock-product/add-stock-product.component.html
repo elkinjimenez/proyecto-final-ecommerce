@@ -1,0 +1,18 @@
+<button mat-raised-button routerLink="/dashboard/product/list" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver
+</button>
+<div class="items-center" style="margin-top: 40px;">
+  <form [formGroup]="rFormsObj">
+    <h1>¡Agregar stock a {{obj.name}}!</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input type="number" formControlName="value" matInput>
+    </mat-form-field>
+    <h2>Actualmente tiene: {{obj.stock}}</h2>
+    <div>
+      <button (click)="add()" [disabled]="!rFormsObj.valid" mat-raised-button color="primary">Agregar
+      </button>
+    </div>
+  </form>
+</div>

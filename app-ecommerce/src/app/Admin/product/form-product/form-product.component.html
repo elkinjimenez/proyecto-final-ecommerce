@@ -1,3 +1,7 @@
+<button mat-raised-button routerLink="/dashboard/product/list" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver
+</button>
 <div class="items-center" style="margin-top: 40px;">
   <form [formGroup]="rFormsObj">
     <h1 *ngIf="idObj == undefined">¡Crear!</h1>
@@ -24,7 +28,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Categoría</mat-label>
         <mat-select formControlName="category">
-          <mat-option *ngFor="let c of _myC.listAll" value="{{c.id}}">{{c.name}}</mat-option>
+          <mat-option *ngFor="let c of _myC.listAll" value="{{c.id}}" [disabled]="!c.state">{{c.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

@@ -1,3 +1,7 @@
+<button mat-raised-button routerLink="/dashboard/category/list" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver
+</button>
 <div class="items-center" style="margin-top: 40px;">
   <form [formGroup]="rFormsObj">
     <h1 *ngIf="idObj == undefined">¡Crear categoría!</h1>
@@ -7,10 +11,10 @@
       <input formControlName="name" matInput>
     </mat-form-field>
     <div>
-      <button (click)="crearCategoria()" *ngIf="idObj == undefined" [disabled]="!rFormsCategory.valid" mat-raised-button
+      <button (click)="crearCategoria()" *ngIf="idObj == undefined" [disabled]="!rFormsObj.valid" mat-raised-button
         color="primary">Crear categoría
       </button>
-      <button (click)="update()" *ngIf="idObj != undefined" [disabled]="!rFormsCategory.valid" mat-raised-button
+      <button (click)="update()" *ngIf="idObj != undefined" [disabled]="!rFormsObj.valid" mat-raised-button
         color="primary">Editar categoría
       </button>
     </div>
