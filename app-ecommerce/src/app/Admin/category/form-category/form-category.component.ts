@@ -50,7 +50,6 @@ export class FormCategoryComponent implements OnInit {
   };
 
   crearCategoria() {
-    console.log('Prueba: ', this.rFormsObj.controls['name'].value);
     let cat = {
       name: this.rFormsObj.controls['name'].value,
       registerUser: 'ELKIN',

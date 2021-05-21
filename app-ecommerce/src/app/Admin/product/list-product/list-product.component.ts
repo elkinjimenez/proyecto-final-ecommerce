@@ -15,8 +15,14 @@ export class ListProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  remove(){
-    // this._myService
+  remove(id: number) {
+    let obj = this._myService.listAll.find(x => x.id == id);
+    obj.state = !obj.state;
+    this._myService.update(obj).subscribe(
+      data => {
+        console.log('Update obj: ', data);
+      }
+    )
   }
 
 }

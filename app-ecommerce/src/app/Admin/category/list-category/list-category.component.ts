@@ -19,7 +19,7 @@ export class ListCategoryComponent implements OnInit {
     obj.state = !obj.state;
     this._myService.update(obj).subscribe(
       data => {
-        console.log('Actualizar obj: ', data);
+        console.log('Update obj: ', data);
       }
     )
   }

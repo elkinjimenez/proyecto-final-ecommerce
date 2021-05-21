@@ -1,17 +1,11 @@
 <div class="items-center" style="margin-top: 40px;">
   <form [formGroup]="rFormsObj">
-    <!-- <h1 *ngIf="idCategory == undefined">¡Crear categoría!</h1>
-    <h1 *ngIf="idCategory != undefined">¡Editar categoría!</h1> -->
+    <h1 *ngIf="idObj == undefined">¡Crear!</h1>
+    <h1 *ngIf="idObj != undefined">¡Editar!</h1>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Nombre</mat-label>
         <input formControlName="name" matInput>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Cantidad</mat-label>
-        <input formControlName="amount" matInput>
       </mat-form-field>
     </div>
     <div>
@@ -42,10 +36,10 @@
     </div>
     <div>
       <button (click)="create()" *ngIf="idObj == undefined" [disabled]="!rFormsObj.valid" mat-raised-button
-        color="primary">Crear categoría
+        color="primary">Crear
       </button>
       <button (click)="update()" *ngIf="idObj != undefined" [disabled]="!rFormsObj.valid" mat-raised-button
-        color="primary">Editar categoría
+        color="primary">Editar
       </button>
     </div>
   </form>

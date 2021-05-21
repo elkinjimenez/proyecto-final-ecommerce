@@ -11,12 +11,13 @@ module.exports = {
 
     name: { type: 'string', required: true },
     state: { type: 'boolean', required: true },
-    registerUser: { type: 'string', required: true },
-    modifyDate: { type: 'string', required: true },
-    modifyUser: { type: 'string', required: true },
+    registerUser: { type: 'string',},
+    modifyUser: { type: 'string',},
     description: { type: 'string', required: true },
     brand: { type: 'string', required: true },
     category: { model: 'Category', unique: true },
+    stock: { type: 'number', required: true },
+    price: { type: 'number', required: true },
     inventory: { collection: 'Inventory', via: 'product' }
 
   },

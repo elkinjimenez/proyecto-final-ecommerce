@@ -30,4 +30,12 @@ export class ProductService {
     )
   }
 
+  create(obj: Product) {
+    return this.http.post('http://localhost:1337/api/product/create', obj);
+  }
+
+  update(product: Product) {
+    return this.http.put('http://localhost:1337/api/product/update/' + product.id, product);
+  }
+
 }

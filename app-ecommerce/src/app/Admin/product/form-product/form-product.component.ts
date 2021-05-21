@@ -23,21 +23,76 @@ export class FormProductComponent implements OnInit {
     private route: ActivatedRoute,
     private ro: Router,
   ) {
+    this.idObj = this.route.snapshot.params.id;
     this.rFormsObj = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z]+')])],
       'category': ['', Validators.required],
       'description': ['', Validators.required],
       'brand': ['', Validators.required],
-      'amount': ['', Validators.required],
       'price': ['', Validators.required],
     })
   }
 
   ngOnInit(): void {
+    this.buscar();
   }
 
-  create(){
-    
+  buscar() {
+    if (this._myService.listAll.length > 0) {
+      let myObj = this._myService.listAll.find(x => x.id == this.idObj);
+      if (myObj) {
+        this.obj = myObj;
+        this.rFormsObj.patchValue(
+          {
+            'name': myObj.name,
+            'description': myObj.description,
+            'brand': myObj.brand,
+            'price': myObj.price,
+            'category': myObj.category
+          }
+        )
+      }
+    } else {
+      setTimeout(() => {
+        this.buscar();
+      }, 500);
+    }
+  };
+
+  create() {
+    this.obj = {
+      name: this.rFormsObj.controls['name'].value,
+      brand: this.rFormsObj.controls['brand'].value,
+      description: this.rFormsObj.controls['description'].value,
+      category: this.rFormsObj.controls['category'].value,
+      state: true,
+      registerUser: 'ELKIN',
+      stock: 0,
+      price: this.rFormsObj.controls['price'].value,
+      createdAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
+      updatedAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
+    }
+    this._myService.create(this.obj).subscribe(
+      data => {
+        console.log('Create Obj: ', data);
+        this._myService.getList();
+        this.ro.navigate(['/dashboard/product/list']);
+      }
+    )
+  }
+
+  update() {
+    this.obj.name = this.rFormsObj.controls['name'].value;
+    this.obj.description = this.rFormsObj.controls['description'].value;
+    this.obj.brand = this.rFormsObj.controls['brand'].value;
+    this.obj.category = this.rFormsObj.controls['category'].value;
+    this.obj.price = this.rFormsObj.controls['price'].value;
+    this._myService.update(this.obj).subscribe(
+      data => {
+        console.log('Update Obj: ', data);
+        this.ro.navigate(['/dashboard/product/list']);
+      }
+    )
   }
 
 }
