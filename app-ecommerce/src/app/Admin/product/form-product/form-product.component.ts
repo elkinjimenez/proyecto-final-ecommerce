@@ -30,6 +30,7 @@ export class FormProductComponent implements OnInit {
       'description': ['', Validators.required],
       'brand': ['', Validators.required],
       'price': ['', Validators.required],
+      'image': ['', Validators.required],
     })
   }
 
@@ -48,6 +49,7 @@ export class FormProductComponent implements OnInit {
             'description': myObj.description,
             'brand': myObj.brand,
             'price': myObj.price,
+            'image': myObj.image,
             'category': myObj.category
           }
         )
@@ -65,6 +67,7 @@ export class FormProductComponent implements OnInit {
       brand: this.rFormsObj.controls['brand'].value,
       description: this.rFormsObj.controls['description'].value,
       category: this.rFormsObj.controls['category'].value,
+      image: this.rFormsObj.controls['image'].value,
       state: true,
       registerUser: 'ELKIN',
       stock: 0,
@@ -87,6 +90,7 @@ export class FormProductComponent implements OnInit {
     this.obj.brand = this.rFormsObj.controls['brand'].value;
     this.obj.category = this.rFormsObj.controls['category'].value;
     this.obj.price = this.rFormsObj.controls['price'].value;
+    this.obj.image = this.rFormsObj.controls['image'].value;
     this._myService.update(this.obj).subscribe(
       data => {
         console.log('Update Obj: ', data);

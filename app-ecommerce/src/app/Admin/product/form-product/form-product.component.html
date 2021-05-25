@@ -26,6 +26,12 @@
     </div>
     <div>
       <mat-form-field appearance="fill">
+        <mat-label>URL de la imagen</mat-label>
+        <input formControlName="image" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
         <mat-label>Categoría</mat-label>
         <mat-select formControlName="category">
           <mat-option *ngFor="let c of _myC.listAll" value="{{c.id}}" [disabled]="!c.state">{{c.name}}</mat-option>

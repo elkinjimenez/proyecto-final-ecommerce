@@ -6,11 +6,13 @@ import { AddStockProductComponent } from './Admin/product/add-stock-product/add-
 import { FormProductComponent } from './Admin/product/form-product/form-product.component';
 import { ListProductComponent } from './Admin/product/list-product/list-product.component';
 import { ListSaleComponent } from './Admin/sale/list-sale/list-sale.component';
+import { HomeComponent } from './Public/home/home.component';
 import { ProductsComponent } from './Public/products/products.component';
 import { ShoppingCartComponent } from './Public/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   // PUBLIC
+  { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
 

@@ -10,4 +10,5 @@ export interface Product extends ObjGeneral {
   category: number;
   stock: number;
   price: number;
+  image: string;
 }
