@@ -11,6 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,9 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     CommonModule,
     AppRoutingModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
+    AngularMaterialModule,
     LayoutModule,
+    FormsModule,
   ],
   exports:[
     LandingPagesComponent,

@@ -7,8 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -24,6 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatCardModule,
     MatSelectModule,
+    MatGridListModule,
   ]
 })
 export class AngularMaterialModule { }

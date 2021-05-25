@@ -1,1 +1,12 @@
-<p>shopping-cart works!</p>
+<div *ngFor="let c of _myService.listAll" class="items-between myCard">
+  <div>
+    <img src="{{c.product.image}}" class="image" alt="">
+  </div>
+  <div>
+    <h2>{{c.product.name}}</h2>
+  </div>
+  <div>
+    <input type="number" [(ngModel)]="c.amount" class="mi-campo">
+    <button (click)="remove(c.id)" mat-raised-button color="warn">Remover</button>
+  </div>
+</div>

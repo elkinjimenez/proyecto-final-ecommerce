@@ -1,1 +1,11 @@
-<p>list-sale works!</p>
+<h1>Ventas</h1>
+<div *ngFor="let c of _myService.listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.client.user}}</h2>
+  </div>
+  <div>
+    <!-- <button mat-raised-button color="primary" routerLink="/dashboard/product/edit/{{c.id}}">Confirmar compra</button> -->
+    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Cancelar compra</button>
+    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Confirmar compra</button>
+  </div>
+</div>

@@ -56,3 +56,9 @@ button {
 h2, h5 {
   margin: 0 !important;
 }
+
+.mi-campo {
+  height: 30px;
+  border: 2px solid #717bff;
+  border-radius: 5px;
+}

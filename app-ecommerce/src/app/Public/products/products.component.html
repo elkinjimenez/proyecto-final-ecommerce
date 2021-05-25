@@ -14,8 +14,7 @@
       <p>{{p.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Agregar al carrito</button>
-      <!-- <button mat-button>SHARE</button> -->
+      <button (click)="add(p.id)" mat-raised-button color="primary">Agregar al carrito</button>
     </mat-card-actions>
   </mat-card>
 </div>
