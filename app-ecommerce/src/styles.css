@@ -29,8 +29,13 @@ body {
 
 .items-center {
   display: flex !important;
-  justify-content: center;
+  justify-content: center !important;
   text-align: center;
+}
+
+.items-end {
+  display: flex !important;
+  justify-content: flex-end;
 }
 
 .items-nav {

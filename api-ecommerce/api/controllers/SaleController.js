@@ -32,7 +32,7 @@ module.exports = {
 
     create: (req, res) => {
     // sails.log.debug(req.allParams())
-    Product.create(req.allParams())
+    Sale.create(req.allParams())
       .then((objeto) => {
         return res.send({
           'success': true,
@@ -49,7 +49,7 @@ module.exports = {
   },
 
   update: (req, res) => {
-    Product.update(req.param('id'), req.allParams())
+    Sale.update(req.param('id'), req.allParams())
       .then((objet) => {
         return res.send({
           'success': true,

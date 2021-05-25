@@ -10,10 +10,9 @@ module.exports = {
   attributes: {
 
     client: { model: 'Client', unique: true },
-    saleDate: { type: 'number', required: true },
-    state: { type: 'boolean', required: true },
+    saleDate: { type: 'number' },
+    state: { type: 'boolean' },
     saleProduct: {collection: 'SaleProduct', via: 'sale'}
-
   },
 
 };

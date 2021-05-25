@@ -9,12 +9,12 @@ module.exports = {
 
   attributes: {
 
-    name: { type: 'string', required: true },
-    lastname: { type: 'string', required: true },
-    email: { type: 'string', required: true },
-    phone: { type: 'string', required: true },
-    address: { type: 'string', required: true },
-    city: { type: 'string', required: true },
+    name: { type: 'string' },
+    lastname: { type: 'string' },
+    email: { type: 'string' },
+    phone: { type: 'string' },
+    address: { type: 'string' },
+    city: { type: 'string' },
     user: { collection: 'User', via: 'person' },
     client: { collection: 'Client', via: 'person' }
 
