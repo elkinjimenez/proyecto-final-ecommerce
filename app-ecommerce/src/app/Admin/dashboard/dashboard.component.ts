@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { UtilService } from 'src/app/Services/util.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +18,19 @@ export class DashboardComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private ro: Router,
+    public util: UtilService,
+  ) { }
+
+  logout() {
+    sessionStorage.clear();
+    this.ro.navigate(['/']);
+    this.util.private = false;
+    setTimeout(() => {
+      window.location.reload();
+    }, 600);
+  }
 
 }

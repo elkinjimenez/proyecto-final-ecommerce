@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
     public _myService: ProductService,
     public _myCart: CartService,
   ) {
-    if (this._myCart.listAll.length <= 0) {
+    if (this._myCart.listAll.length <= 0 && sessionStorage.getItem(btoa('myProducts'))) {
       this._myCart.listAll = JSON.parse(sessionStorage.getItem(btoa('myProducts')));
     }
   }

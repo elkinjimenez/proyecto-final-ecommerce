@@ -2,7 +2,8 @@
   <a routerLink="" class="items-nav">Inicio</a>
   <a routerLink="/products" class="items-nav">Productos</a>
   <a routerLink="/shopping-cart" class="items-nav">Mi carrito ({{_myCart.listAll.length}})</a>
-  <a (click)="login()"  class="items-nav">Inicio de sesión</a>
+  <a (click)="login()" *ngIf="!_client.logueado" class="items-nav">Inicio de sesión</a>
+  <a (click)="logout()" *ngIf="_client.logueado" class="items-nav" style="color: #f3c9c9;">Cerrar sesión</a>
 </nav>
 <div style="padding: 10px;">
   <router-outlet></router-outlet>

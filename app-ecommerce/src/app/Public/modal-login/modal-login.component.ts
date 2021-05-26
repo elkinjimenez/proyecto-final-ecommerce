@@ -45,8 +45,13 @@ export class ModalLoginComponent implements OnInit {
         data => {
           console.log('Exitoso: ', data);
           this.util.private = true;
-          this.dialogRef.close();
           this.ro.navigate(['/dashboard']);
+          setTimeout(() => {
+            this.dialogRef.close();
+            setTimeout(() => {
+              window.location.reload();
+            }, 600);
+          }, 600);
         }
       )
     } else if (this.rFormsObj.controls['type'].value == 2) {
@@ -60,6 +65,7 @@ export class ModalLoginComponent implements OnInit {
           this.util.private = false;
           sessionStorage.setItem(btoa('client'), JSON.stringify(data));
           this.dialogRef.close();
+          window.location.reload();
         }
       )
     }

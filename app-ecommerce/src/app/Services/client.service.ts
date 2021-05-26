@@ -7,9 +7,17 @@ import { Client } from '../Interfaces/client';
 })
 export class ClientService {
 
+  logueado = false;
+
   constructor(
     private http: HttpClient,
-  ) { }
+  ) {
+    if (sessionStorage.getItem(btoa('client')) || sessionStorage.getItem(btoa('user'))) {
+      this.logueado = true;
+    } else {
+      this.logueado = false;
+    }
+  }
 
   auth(body: Client) {
     return this.http.post('http://localhost:1337/api/client/auth', body);

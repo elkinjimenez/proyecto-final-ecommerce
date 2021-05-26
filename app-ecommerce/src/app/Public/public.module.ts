@@ -14,6 +14,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
+import { ModalFinallyBuyComponent } from './modal-finally-buy/modal-finally-buy.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ModalLoginComponent } from './modal-login/modal-login.component';
     LandingPagesComponent,
     HomeComponent,
     ModalLoginComponent,
+    ModalFinallyBuyComponent,
   ],
   imports: [
     CommonModule,

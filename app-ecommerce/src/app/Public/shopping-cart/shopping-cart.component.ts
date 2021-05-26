@@ -5,6 +5,7 @@ import { Sale } from 'src/app/Interfaces/sale';
 import { CartService } from 'src/app/Services/cart.service';
 import { SaleProductService } from 'src/app/Services/sale-product.service';
 import { SaleService } from 'src/app/Services/sale.service';
+import { ModalFinallyBuyComponent } from '../modal-finally-buy/modal-finally-buy.component';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 
 @Component({
@@ -20,7 +21,7 @@ export class ShoppingCartComponent implements OnInit {
     public dialog: MatDialog,
     public _saleProduct: SaleProductService,
   ) {
-    if (this._myService.listAll.length <= 0) {
+    if (this._myService.listAll.length <= 0 && sessionStorage.getItem(btoa('myProducts'))) {
       this._myService.listAll = JSON.parse(sessionStorage.getItem(btoa('myProducts')));
     }
   }
@@ -50,6 +51,9 @@ export class ShoppingCartComponent implements OnInit {
               saleP => {
                 console.log('Sale Producto create: ', saleP);
                 bandera += 1;
+                if (bandera == this._myService.listAll.length) {
+                  this.terminarCompra();
+                }
               }
             )
           })
@@ -64,8 +68,15 @@ export class ShoppingCartComponent implements OnInit {
         }
       });
     }
+  }
 
-
+  terminarCompra(): void {
+    this._myService.listAll = [];
+    sessionStorage.setItem(btoa('myProducts'), JSON.stringify(this._myService.listAll));
+    const dialogRef = this.dialog.open(ModalFinallyBuyComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

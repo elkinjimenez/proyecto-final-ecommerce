@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CartService } from 'src/app/Services/cart.service';
+import { ClientService } from 'src/app/Services/client.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
 
 @Component({
@@ -13,17 +14,21 @@ export class LandingPagesComponent implements OnInit {
   constructor(
     public _myCart: CartService,
     public dialog: MatDialog,
+    public _client: ClientService,
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  login(){
+  login() {
     const dialogRef = this.dialog.open(ModalLoginComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  logout() {
+    sessionStorage.clear();
+    window.location.reload();
   }
 
 }
