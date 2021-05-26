@@ -60,4 +60,7 @@ module.exports.routes = {
     'POST /api/user/auth': 'UserController.auth',
     'POST /api/user/validate': 'UserController.validate',
 
+    'POST /api/client/create': 'ClientController.create',
+    'POST /api/client/auth': 'ClientController.auth',
+
 };

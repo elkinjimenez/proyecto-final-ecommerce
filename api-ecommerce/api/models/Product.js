@@ -16,7 +16,7 @@ module.exports = {
     image: { type: 'string', },
     description: { type: 'string', required: true },
     brand: { type: 'string', required: true },
-    category: { model: 'Category', unique: true },
+    category: { model: 'Category' },
     stock: { type: 'number', required: true },
     price: { type: 'number', required: true },
 

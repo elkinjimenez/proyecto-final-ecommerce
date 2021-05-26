@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UtilService } from './Services/util.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent {
 
-  private = false;
-
   title = 'app-ecommerce';
 
   constructor(
     private ro: Router,
+    public util: UtilService,
   ) {
-    this.private = location.pathname.indexOf('dashboard') > 0 ? true : false;
+    this.util.private = location.pathname.indexOf('dashboard') > 0 ? true : false;
   }
 }

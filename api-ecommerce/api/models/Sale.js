@@ -9,10 +9,10 @@ module.exports = {
 
   attributes: {
 
-    client: { model: 'Client', unique: true },
-    saleDate: { type: 'number' },
+    client: { model: 'Client' },
+    saleDate: { type: 'number', autoCreatedAt: true, },
     state: { type: 'boolean' },
-    saleProduct: {collection: 'SaleProduct', via: 'sale'}
+    saleProduct: { collection: 'SaleProduct', via: 'sale' }
   },
 
 };

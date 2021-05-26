@@ -12,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     ShoppingCartComponent,
     LandingPagesComponent,
     HomeComponent,
+    ModalLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     AngularMaterialModule,
     LayoutModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports:[
     LandingPagesComponent,

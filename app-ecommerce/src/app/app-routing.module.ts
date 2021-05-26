@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormCategoryComponent } from './Admin/category/form-category/form-category.component';
 import { ListCategoryComponent } from './Admin/category/list-category/list-category.component';
+import { LandingAdminComponent } from './Admin/landing-admin/landing-admin.component';
 import { AddStockProductComponent } from './Admin/product/add-stock-product/add-stock-product.component';
 import { FormProductComponent } from './Admin/product/form-product/form-product.component';
 import { ListProductComponent } from './Admin/product/list-product/list-product.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
 
   // PRIVATE
+  { path: 'dashboard', component: LandingAdminComponent },
   { path: 'dashboard/category/list', component: ListCategoryComponent },
   { path: 'dashboard/category/create', component: FormCategoryComponent },
   { path: 'dashboard/category/edit/:id', component: FormCategoryComponent },

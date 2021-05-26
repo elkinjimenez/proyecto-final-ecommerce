@@ -11,6 +11,7 @@ import { FormProductComponent } from './product/form-product/form-product.compon
 import { ListProductComponent } from './product/list-product/list-product.component';
 import { AddStockProductComponent } from './product/add-stock-product/add-stock-product.component';
 import { ListSaleComponent } from './sale/list-sale/list-sale.component';
+import { LandingAdminComponent } from './landing-admin/landing-admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListSaleComponent } from './sale/list-sale/list-sale.component';
     FormProductComponent,
     ListProductComponent,
     AddStockProductComponent,
-    ListSaleComponent
+    ListSaleComponent,
+    LandingAdminComponent
   ],
   imports: [
     CommonModule,

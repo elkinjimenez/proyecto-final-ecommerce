@@ -8,9 +8,9 @@ module.exports = {
 
 
     inputs: {
-        clave: {
+        password: {
             type: 'string',
-            friendlyName: 'clave',
+            friendlyName: 'password',
             description: 'Clave enviada por el usuario.',
             required: true
         },
@@ -34,8 +34,8 @@ module.exports = {
 
 
     fn: async function(inputs, exits) {
-        if (inputs.clave) {
-            await sails.helpers.passwords.checkPassword(inputs.clave, inputs.hash)
+        if (inputs.password) {
+            await sails.helpers.passwords.checkPassword(inputs.password, inputs.hash)
                 .intercept('incorrect', "invalido");
         }
 

@@ -10,8 +10,8 @@ module.exports = {
   attributes: {
 
     amount: { type: 'number', required: true },
-    product: { model: 'Product', unique: true },
-    sale: { model: 'Sale', unique: true },
+    product: { model: 'Product' },
+    sale: { model: 'Sale' },
 
   },
 

@@ -33,7 +33,8 @@ module.exports = {
     create: (req, res) => {
     // sails.log.debug(req.allParams())
     Sale.create(req.allParams())
-      .then((objeto) => {
+      .then(objeto => {
+        sails.log.debug(objeto);
         return res.send({
           'success': true,
           'message': 'Objeto creado exitosamente.',

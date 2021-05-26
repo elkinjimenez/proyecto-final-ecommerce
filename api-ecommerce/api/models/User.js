@@ -13,7 +13,7 @@ module.exports = {
     password: { type: 'string' },
     state: { type: 'boolean' },
     loginDate: { type: 'string' },
-    person: { model: 'Person', unique: true },
+    person: { model: 'Person' },
 
   },
 
