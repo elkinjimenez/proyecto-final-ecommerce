@@ -68,3 +68,7 @@ h2, h5 {
   border: 2px solid #717bff;
   border-radius: 5px;
 }
+
+.float-end {
+  float: right !important;
+}

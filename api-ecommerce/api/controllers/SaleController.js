@@ -30,24 +30,40 @@ module.exports = {
       })
   },
 
-    create: (req, res) => {
-    // sails.log.debug(req.allParams())
-    Sale.create(req.allParams())
-      .then(objeto => {
-        sails.log.debug(objeto);
-        return res.send({
-          'success': true,
-          'message': 'Objeto creado exitosamente.',
-          'data': objeto,
-        })
+  create: async function (req, res) {
+    var creado = await Sale.create(req.allParams()).fetch();
+    if (creado) {
+      return res.send({
+        'success': true,
+        'message': 'Objeto creado exitosamente.',
+        'data': creado,
       })
-      .catch((error) => {
-        return res.send({
-          'success': false,
-          'message': 'Error en la solicitud:' + error,
-        })
+    } else {
+      return res.send({
+        'success': false,
+        'message': 'Error en la solicitud.',
       })
+    }
   },
+
+  // create: (req, res) => {
+  //   // sails.log.debug(req.allParams())
+  //   Sale.create(req.allParams())
+  //     .then(objeto => {
+  //       sails.log.debug(objeto);
+  //       return res.send({
+  //         'success': true,
+  //         'message': 'Objeto creado exitosamente.',
+  //         'data': objeto,
+  //       })
+  //     })
+  //     .catch((error) => {
+  //       return res.send({
+  //         'success': false,
+  //         'message': 'Error en la solicitud:' + error,
+  //       })
+  //     })
+  // },
 
   update: (req, res) => {
     Sale.update(req.param('id'), req.allParams())

@@ -4,6 +4,6 @@ import { Sale } from "./sale";
 
 export interface SaleProduct  extends ObjGeneral{
   amount: number;
-  sale: Sale;
-  product: Product;
+  product: Product | number;
+  sale: Sale | number;
 }

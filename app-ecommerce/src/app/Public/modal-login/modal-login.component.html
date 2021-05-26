@@ -22,7 +22,8 @@
     </mat-form-field>
   </div>
   <div>
-    <button (click)="login()" [disabled]="!rFormsObj.valid" mat-raised-button color="primary">Iniciar
+    <button (click)="login()" [mat-dialog-close]="true" [disabled]="!rFormsObj.valid" mat-raised-button
+      color="primary">Ingresar
     </button>
   </div>
 </form>

@@ -12,10 +12,13 @@ export class ProductsComponent implements OnInit {
   constructor(
     public _myService: ProductService,
     public _myCart: CartService,
-  ) { }
-
-  ngOnInit(): void {
+  ) {
+    if (this._myCart.listAll.length <= 0) {
+      this._myCart.listAll = JSON.parse(sessionStorage.getItem(btoa('myProducts')));
+    }
   }
+
+  ngOnInit(): void {}
 
   add(id: number) {
     let pr = this._myService.listAll.find(x => x.id == id);
@@ -26,7 +29,7 @@ export class ProductsComponent implements OnInit {
       createdAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
       updatedAt: parseInt((new Date().toISOString()).replace(/-/g, '').replace(/:/g, '').replace(/Z/g, '').replace(/T/g, '').replace(/\./g, '')),
     })
-    console.log('TOTAL: ', this._myCart.listAll);
+    sessionStorage.setItem(btoa('myProducts'), JSON.stringify(this._myCart.listAll));
   }
 
 }
