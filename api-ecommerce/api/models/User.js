@@ -9,10 +9,10 @@ module.exports = {
 
   attributes: {
 
-    user: { type: 'string', required: true },
-    password: { type: 'string', required: true },
-    state: { type: 'boolean', required: true },
-    loginDate: { type: 'string', required: true },
+    user: { type: 'string' },
+    password: { type: 'string' },
+    state: { type: 'boolean' },
+    loginDate: { type: 'string' },
     person: { model: 'Person', unique: true },
 
   },

@@ -10,13 +10,27 @@
 
 module.exports.policies = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions, unless overridden.       *
-  * (`true` allows public access)                                            *
-  *                                                                          *
-  ***************************************************************************/
+    // 'AgendaController': {
+    //     'get': 'isAuth', // Para usar politica sobre el metodo
+    //     'create': 'isAuth',
+    //     'delete': 'isAuth',
+    //     'update': 'isAuth'
+    // },
 
-  // '*': true,
+    'UsuarioController': {
+        'get': 'isAuth', // Para usar politica sobre el metodo
+        // 'create': 'isAuth',
+        'miAgenda': 'isAuth',
+    }
+
+
+    /***************************************************************************
+     *                                                                          *
+     * Default policy for all controllers and actions, unless overridden.       *
+     * (`true` allows public access)                                            *
+     *                                                                          *
+     ***************************************************************************/
+
+    // '*': true,
 
 };
