@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/Services/cart.service';
 import { ClientService } from 'src/app/Services/client.service';
 import { ModalLoginComponent } from '../modal-login/modal-login.component';
@@ -15,6 +16,7 @@ export class LandingPagesComponent implements OnInit {
     public _myCart: CartService,
     public dialog: MatDialog,
     public _client: ClientService,
+    private ro: Router,
   ) { }
 
   ngOnInit(): void { }
@@ -28,7 +30,10 @@ export class LandingPagesComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
-    window.location.reload();
+    this.ro.navigate(['/products']);
+    setTimeout(() => {
+      window.location.reload();
+    }, 600);
   }
 
 }

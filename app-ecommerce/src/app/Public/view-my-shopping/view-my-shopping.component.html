@@ -1,0 +1,32 @@
+<button mat-raised-button routerLink="/my-shopping" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver
+</button>
+<div class="items-between">
+  <div>
+    <h1 style="margin-top: 10px;"> Productos de la compra</h1>
+  </div>
+  <div class="items-end">
+    <div>
+      <div class="items-end">
+        <button (click)="invoice()" [disabled]="(sale.state == false)" mat-raised-button
+          color="primary">
+          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon> -->
+          Factura de compra
+        </button>
+      </div>
+      <div>
+        <h3 class="text-success" *ngIf="sale.state">La compra ya se encuentra confirmada por el vendedor.</h3>
+        <h3 class="text-danger" *ngIf="!sale.state">Compra pendiente por confirmar por el vendedor.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let c of listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.product.name}}</h2>
+  </div>
+  <div>
+    <h2>{{c.amount}} und.</h2>
+  </div>
+</div>

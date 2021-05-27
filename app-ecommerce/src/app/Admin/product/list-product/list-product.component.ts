@@ -10,7 +10,9 @@ export class ListProductComponent implements OnInit {
 
   constructor(
     public _myService: ProductService,
-  ) { }
+  ) {
+    _myService.getList();
+  }
 
   ngOnInit(): void {
   }

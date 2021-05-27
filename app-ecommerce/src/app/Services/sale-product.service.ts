@@ -19,7 +19,7 @@ export class SaleProductService {
   getList() {
     return this.http.get('http://localhost:1337/api/sale-product/list').subscribe(
       data => {
-        console.log('Listado de categorías: ', data);
+        console.log('List sale Products: ', data);
         let resp = data as RespSaleProduct;
         if (resp.success == true) {
           this.listAll = resp.data;

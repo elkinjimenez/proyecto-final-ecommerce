@@ -9,13 +9,15 @@
   <div class="items-end">
     <div>
       <div class="items-end">
-        <button [disabled]="!(message == '')" mat-raised-button routerLink="/dashboard/product/list" color="primary">
+        <button (click)="confirmSale()" [disabled]="!(message == '' && sale.state == false)" mat-raised-button
+          color="primary">
           <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon> -->
           Confimar compra
         </button>
       </div>
       <div>
-        <h3 class="text-danger" *ngIf="message != ''">{{message}}</h3>
+        <h3 class="text-danger" *ngIf="message != '' && sale.state == false">{{message}}</h3>
+        <h3 class="text-success" *ngIf="sale.state">La compra ya se encuentra confirmada y descontada del stock.</h3>
       </div>
     </div>
   </div>
@@ -25,6 +27,19 @@
     <h2>{{c.product.name}}</h2>
   </div>
   <div>
-    <h2 [ngClass]="{'text-danger': c.amount > c.product.stock}">{{c.amount}} und. / {{c.product.stock}}</h2>
+    <h2 [ngClass]="{'text-danger': (c.amount > c.product.stock && sale.state == false)}">{{c.amount}} und. <span *ngIf="sale.state == false"> /
+        {{c.product.stock}}</span></h2>
   </div>
+</div>
+<div class="invoice" style="margin-top: 40px;">
+  <h2>Información del cliente: {{client.user}}</h2>
+  <small>Contacte al cliente para confirmar dirección de entrega y medio de pago.</small>
+  <hr>
+  <h5>Nombre: <span style="color: blue;">{{client.person.name}} {{client.person.lastname}}</span></h5>
+  <h5>Correo: <span style="color: blue;">{{client.person.email}}</span></h5>
+  <h5>Teléfono: <span style="color: blue;">{{client.person.phone}}</span></h5>
+  <h5>Dirección de entrega: <span style="color: blue;">{{client.person.address}}</span></h5>
+  <h5>Ciudad de entrega: <span style="color: blue;">{{client.person.city}}</span></h5>
+  <h5>Género: <span style="color: blue;">{{client.gender}}</span></h5>
+
 </div>

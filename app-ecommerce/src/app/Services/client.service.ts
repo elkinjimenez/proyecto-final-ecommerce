@@ -24,4 +24,8 @@ export class ClientService {
   auth(body: Client) {
     return this.http.post('http://localhost:1337/api/client/auth', body);
   }
+
+  searchById(id: number) {
+    return this.http.get('http://localhost:1337/api/client/byid/' + id);
+  }
 }

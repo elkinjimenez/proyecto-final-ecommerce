@@ -15,7 +15,7 @@ body {
   position: absolute;
 }
 
-.myCard{
+.myCard {
   margin: 10px 5px;
   border: 1px solid #717bff;
   border-radius: 5px;
@@ -73,7 +73,19 @@ h2, h5, h3 {
   float: right !important;
 }
 
-.text-danger{
+.text-danger {
   color: red;
   font-weight: bold !important;
+}
+
+.text-success {
+  color: blue;
+  font-weight: bold !important;
+}
+
+.invoice {
+  border: 1px black solid;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 5px;
 }

@@ -1,9 +1,11 @@
 <h1>Ventas</h1>
 <div *ngFor="let c of _myService.listAll" class="items-between myCard">
   <div>
-    <h2>{{c.client.user}}</h2>
+    <h2><span style="color: blue;">Cliente:</span> {{c.client.user}}</h2>
   </div>
   <div>
+    <span *ngIf="c.state" class="text-success">Confirmada</span>
+    <span *ngIf="!c.state" class="text-danger">Pendiente</span>
     <button routerLink="/dashboard/sales/view/{{c.id}}" mat-raised-button color="primary">Ver compra</button>
   </div>
 </div>

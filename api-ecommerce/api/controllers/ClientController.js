@@ -73,6 +73,29 @@ module.exports = {
       })
   },
 
+  byid: (req, res) => {
+    Client.find(req.param('id')).populate('person')
+      .then((client) => {
+        if (!client || client.lenght == 0) {
+          return res.send({
+            'success': false,
+            'message': 'Sin registros.',
+          })
+        }
+        return res.send({
+          'success': true,
+          'message': 'Solicitud exitosa.',
+          'data': client,
+        })
+      })
+      .catch((error) => {
+        return res.send({
+          'success': false,
+          'message': 'Error en la solicitud:' + error,
+        })
+      })
+  },
+
   // validate: (req, res) => {
   //   sails.helpers.jwTokenValidate.with({
   //     req: req

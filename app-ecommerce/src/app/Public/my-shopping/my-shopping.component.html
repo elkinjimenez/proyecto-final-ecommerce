@@ -4,7 +4,8 @@
     <h2>{{c.client.user}}</h2>
   </div>
   <div>
-    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Cancelar compra</button>
-    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Confirmar compra</button>
+    <span *ngIf="c.state" class="text-success">Confirmada por el vendedor</span>
+    <span *ngIf="!c.state" class="text-danger">Pendiente</span>
+    <button routerLink="/my-shopping/view/{{c.id}}" mat-raised-button color="primary">Ver productos</button>
   </div>
 </div>

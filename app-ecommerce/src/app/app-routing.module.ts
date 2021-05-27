@@ -12,6 +12,7 @@ import { HomeComponent } from './Public/home/home.component';
 import { MyShoppingComponent } from './Public/my-shopping/my-shopping.component';
 import { ProductsComponent } from './Public/products/products.component';
 import { ShoppingCartComponent } from './Public/shopping-cart/shopping-cart.component';
+import { ViewMyShoppingComponent } from './Public/view-my-shopping/view-my-shopping.component';
 
 const routes: Routes = [
   // PUBLIC
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'my-shopping', component: MyShoppingComponent },
+  { path: 'my-shopping/view/:id', component: ViewMyShoppingComponent },
 
   // PRIVATE
   { path: 'dashboard', component: LandingAdminComponent },

@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { ModalFinallyBuyComponent } from './modal-finally-buy/modal-finally-buy.component';
 import { MyShoppingComponent } from './my-shopping/my-shopping.component';
+import { ViewMyShoppingComponent } from './view-my-shopping/view-my-shopping.component';
+import { ModalInvoiceComponent } from './modal-invoice/modal-invoice.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MyShoppingComponent } from './my-shopping/my-shopping.component';
     ModalLoginComponent,
     ModalFinallyBuyComponent,
     MyShoppingComponent,
+    ViewMyShoppingComponent,
+    ModalInvoiceComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SaleProductService } from 'src/app/Services/sale-product.service';
 import { SaleService } from 'src/app/Services/sale.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class ListSaleComponent implements OnInit {
 
   constructor(
     public _myService: SaleService,
-  ) { }
+    private _saleProduct: SaleProductService,
+  ) {
+    _saleProduct.getList();
+  }
 
   ngOnInit(): void {
   }
