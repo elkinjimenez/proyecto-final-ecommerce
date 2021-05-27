@@ -1,0 +1,62 @@
+<button mat-raised-button routerLink="/dashboard/client/list" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver {{objPerson.id}}
+</button>
+<div class="items-center" style="margin-top: 40px;">
+  <form [formGroup]="rFormsObj">
+    <h1 *ngIf="idObj == undefined">¡Crear cliente!</h1>
+    <h1 *ngIf="idObj != undefined">¡Editar cliente!</h1>
+    <div class="items-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="name" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input formControlName="lastname" matInput>
+      </mat-form-field>
+    </div>
+    <div class="items-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input type="number" formControlName="phone" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input type="email" formControlName="email" matInput>
+      </mat-form-field>
+    </div>
+    <div class="items-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input formControlName="address" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ciudad</mat-label>
+        <input formControlName="city" matInput>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill" style="width: 98%;">
+      <mat-label>Género</mat-label>
+      <input formControlName="gender" matInput>
+    </mat-form-field>
+    <div class="items-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input formControlName="user" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" formControlName="password" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <button (click)="crear()" *ngIf="idObj == undefined" [disabled]="!rFormsObj.valid" mat-raised-button
+        color="primary">Crear cliente
+      </button>
+      <button (click)="update()" *ngIf="idObj != undefined" [disabled]="!rFormsObj.valid" mat-raised-button
+        color="primary">Editar cliente
+      </button>
+    </div>
+  </form>
+</div>

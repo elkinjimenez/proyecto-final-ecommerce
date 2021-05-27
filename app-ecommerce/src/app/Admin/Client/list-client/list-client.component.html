@@ -1,0 +1,11 @@
+<button mat-raised-button color="primary" routerLink="/dashboard/client/create">Crear cliente</button>
+<div *ngFor="let c of _myService.listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.person.name}} {{c.person.lastname}} | <span style="color: blue;">{{c.user}}</span></h2>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" routerLink="/dashboard/client/edit/{{c.id}}">Editar</button>
+    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Inactivar</button>
+    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Activar</button>
+  </div>
+</div>
