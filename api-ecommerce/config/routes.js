@@ -62,8 +62,13 @@ module.exports.routes = {
 
     'POST /api/client/create': 'ClientController.create',
     'POST /api/client/auth': 'ClientController.auth',
+    'PUT /api/client/update/:id': 'ClientController.update',
     'GET /api/client/byid/:id': 'ClientController.byid',
+    'GET /api/client/list': 'ClientController.list',
 
     'POST /api/sale-product/create': 'SaleProductController.create',
     'GET /api/sale-product/list': 'SaleProductController.list',
+
+    'POST /api/person/create': 'PersonController.create',
+    'PUT /api/person/update/:id': 'PersonController.update',
 };

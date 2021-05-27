@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  
+
   create: (req, res) => {
     // sails.log.debug(req.allParams())
     let parametros = req.allParams();
@@ -73,6 +73,29 @@ module.exports = {
       })
   },
 
+  list: (req, res) => {
+    Client.find().populate('person')
+      .then((client) => {
+        if (!client || client.lenght == 0) {
+          return res.send({
+            'success': false,
+            'message': 'Sin registros.',
+          })
+        }
+        return res.send({
+          'success': true,
+          'message': 'Solicitud exitosa.',
+          'data': client,
+        })
+      })
+      .catch((error) => {
+        return res.send({
+          'success': false,
+          'message': 'Error en la solicitud:' + error,
+        })
+      })
+  },
+
   byid: (req, res) => {
     Client.find(req.param('id')).populate('person')
       .then((client) => {
@@ -93,6 +116,28 @@ module.exports = {
           'success': false,
           'message': 'Error en la solicitud:' + error,
         })
+      })
+  },
+
+  update: (req, res) => {
+    let parametros = req.allParams();
+    sails.helpers.passwords.hashPassword(parametros.password)
+      .then((cifrada) => {
+        parametros.password = cifrada
+        Client.update(req.param('id'), parametros)
+          .then((obj) => {
+            return res.send({
+              'success': true,
+              'message': 'Client actualizada exitosamente.',
+              'data': obj,
+            })
+          })
+          .catch((error) => {
+            return res.send({
+              'success': false,
+              'message': 'Error en la solicitud:' + error,
+            })
+          })
       })
   },
 

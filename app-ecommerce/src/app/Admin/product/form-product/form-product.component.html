@@ -6,32 +6,36 @@
   <form [formGroup]="rFormsObj">
     <h1 *ngIf="idObj == undefined">¡Crear!</h1>
     <h1 *ngIf="idObj != undefined">¡Editar!</h1>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre</mat-label>
-        <input formControlName="name" matInput>
-      </mat-form-field>
+    <div class="items-center">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Precio</mat-label>
+          <input type="number" formControlName="price" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="items-center">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Marca</mat-label>
+          <input formControlName="brand" matInput>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>URL de la imagen</mat-label>
+          <input formControlName="image" matInput>
+        </mat-form-field>
+      </div>
     </div>
     <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Precio</mat-label>
-        <input type="number" formControlName="price" matInput>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Marca</mat-label>
-        <input formControlName="brand" matInput>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>URL de la imagen</mat-label>
-        <input formControlName="image" matInput>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field style="width: 98%;" appearance="fill">
         <mat-label>Categoría</mat-label>
         <mat-select formControlName="category">
           <mat-option *ngFor="let c of _myC.listAll" value="{{c.id}}" [disabled]="!c.state">{{c.name}}</mat-option>
@@ -39,7 +43,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field style="width: 98%;" appearance="fill">
         <mat-label>Descripción</mat-label>
         <textarea formControlName="description" matInput></textarea>
       </mat-form-field>

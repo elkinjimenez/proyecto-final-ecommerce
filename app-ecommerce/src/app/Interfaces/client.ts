@@ -5,6 +5,6 @@ export interface Client extends ObjGeneral {
   gender: string;
   user: string;
   password: string;
-  person: Person;
+  person: number | Person | any;
   state: boolean;
 }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormCategoryComponent } from './Admin/category/form-category/form-category.component';
 import { ListCategoryComponent } from './Admin/category/list-category/list-category.component';
+import { FormClientComponent } from './Admin/Client/form-client/form-client.component';
+import { ListClientComponent } from './Admin/Client/list-client/list-client.component';
 import { LandingAdminComponent } from './Admin/landing-admin/landing-admin.component';
 import { AddStockProductComponent } from './Admin/product/add-stock-product/add-stock-product.component';
 import { FormProductComponent } from './Admin/product/form-product/form-product.component';
@@ -35,6 +37,10 @@ const routes: Routes = [
 
   { path: 'dashboard/sales/list', component: ListSaleComponent },
   { path: 'dashboard/sales/view/:id', component: ViewSaleComponent },
+
+  { path: 'dashboard/client/list', component: ListClientComponent },
+  { path: 'dashboard/client/create', component: FormClientComponent },
+  { path: 'dashboard/client/edit/:id', component: FormClientComponent },
 ];
 
 @NgModule({
