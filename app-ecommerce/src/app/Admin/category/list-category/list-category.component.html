@@ -9,3 +9,6 @@
     <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Activar</button>
   </div>
 </div>
+<div *ngIf="_myService.listAll.length == 0">
+  <h2 style="margin-top: 20px !important;">No se han encontrado categorías, por favor crearlas.</h2>
+</div>

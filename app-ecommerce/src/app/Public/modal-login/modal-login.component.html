@@ -1,29 +1,32 @@
-<form [formGroup]="rFormsObj">
-  <h1>¡Inicio de sesión!</h1>
+<form [formGroup]="rFormsObj" style="text-align: center;">
   <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Usuario</mat-label>
-      <input formControlName="user" matInput>
-    </mat-form-field>
+    <h1>¡Inicio de sesión!</h1>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input formControlName="user" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Clave</mat-label>
+        <input formControlName="password" type="password" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de usuario</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value='1'>Administrador</mat-option>
+          <mat-option value='2'>Cliente</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <span *ngIf="message != ''" style="color: red; font-weight: bold;">{{message}}</span>
+    <div>
+      <button (click)="login()" [disabled]="!rFormsObj.valid" mat-raised-button color="primary">Ingresar
+      </button>
+    </div>
   </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Clave</mat-label>
-      <input formControlName="password" type="password" matInput>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Tipo de usuario</mat-label>
-      <mat-select formControlName="type">
-        <mat-option value='1'>Administrador</mat-option>
-        <mat-option value='2'>Cliente</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div>
-    <button (click)="login()" [mat-dialog-close]="true" [disabled]="!rFormsObj.valid" mat-raised-button
-      color="primary">Ingresar
-    </button>
-  </div>
+
 </form>

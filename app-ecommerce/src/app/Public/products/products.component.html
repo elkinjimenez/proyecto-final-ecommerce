@@ -11,8 +11,10 @@
       <div class="items-center">
         <img mat-card-image src="{{p.image}}" alt="{{p.name}}">
       </div>
-      <mat-card-content>
-        <p>{{p.description}}</p>
+      <mat-card-content style="margin-bottom: 0 !important;">
+        <h5>{{p.description}}</h5>
+        <hr>
+        <span style="font-weight: bold; color: blue;">{{p.price | currency}} c/u</span>
       </mat-card-content>
       <mat-card-actions>
         <button (click)="add(p.id)" mat-raised-button color="primary">Agregar al carrito</button>

@@ -8,6 +8,7 @@
       <h2>{{c.product.name}}</h2>
     </div>
     <div>
+      <span style="margin: 0 10px; font-weight: bold; color: blue;">{{c.product.price | currency}} x</span>
       <input type="number" [(ngModel)]="c.amount" class="mi-campo">
       <button (click)="remove(i)" mat-raised-button color="warn">Remover</button>
     </div>

@@ -22,7 +22,12 @@ export class DashboardComponent {
     private breakpointObserver: BreakpointObserver,
     private ro: Router,
     public util: UtilService,
-  ) { }
+  ) {
+    if (!sessionStorage.getItem(btoa('user'))) {
+      this.ro.navigate(['/']);
+      util.private = false;
+    }
+  }
 
   logout() {
     sessionStorage.clear();

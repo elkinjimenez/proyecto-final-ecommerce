@@ -15,6 +15,7 @@ import { LandingAdminComponent } from './landing-admin/landing-admin.component';
 import { ViewSaleComponent } from './view-sale/view-sale.component';
 import { ListClientComponent } from './Client/list-client/list-client.component';
 import { FormClientComponent } from './Client/form-client/form-client.component';
+import { SharedModule } from '../Shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormClientComponent } from './Client/form-client/form-client.component'
     AppRoutingModule,
     AngularMaterialModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
     DashboardComponent,

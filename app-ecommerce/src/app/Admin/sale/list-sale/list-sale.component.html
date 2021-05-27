@@ -9,3 +9,6 @@
     <button routerLink="/dashboard/sales/view/{{c.id}}" mat-raised-button color="primary">Ver compra</button>
   </div>
 </div>
+<div *ngIf="_myService.listAll.length == 0">
+  <h2 style="margin-top: 20px !important;">No se han encontrado ventas para confirmar.</h2>
+</div>

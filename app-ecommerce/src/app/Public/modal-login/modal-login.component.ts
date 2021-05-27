@@ -17,6 +17,8 @@ export class ModalLoginComponent implements OnInit {
 
   rFormsObj: FormGroup;
 
+  message = '';
+
   constructor(
     private fb: FormBuilder,
     public _myClient: ClientService,
@@ -32,10 +34,10 @@ export class ModalLoginComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   login() {
+    this.message = '';
     if (this.rFormsObj.controls['type'].value == 1) {
       let body = {
         user: this.rFormsObj.controls['user'].value,
@@ -44,14 +46,20 @@ export class ModalLoginComponent implements OnInit {
       this._myUser.auth(body).subscribe(
         data => {
           console.log('Exitoso: ', data);
-          this.util.private = true;
-          this.ro.navigate(['/dashboard']);
-          setTimeout(() => {
-            this.dialogRef.close();
+          let resp = data as any;
+          if (resp.success) {
+            sessionStorage.setItem(btoa('user'), JSON.stringify(data));
+            this.util.private = true;
+            this.ro.navigate(['/dashboard']);
             setTimeout(() => {
-              window.location.reload();
-            }, 600);
-          }, 600);
+              this.dialogRef.close();
+              setTimeout(() => {
+                window.location.reload();
+              }, 300);
+            }, 300);
+          } else {
+            this.message = resp.message;
+          }
         }
       )
     } else if (this.rFormsObj.controls['type'].value == 2) {
@@ -62,10 +70,15 @@ export class ModalLoginComponent implements OnInit {
       this._myClient.auth(body).subscribe(
         data => {
           console.log('Exitoso: ', data);
-          this.util.private = false;
-          sessionStorage.setItem(btoa('client'), JSON.stringify(data));
-          this.dialogRef.close();
-          window.location.reload();
+          let resp = data as any;
+          if (resp.success) {
+            this.util.private = false;
+            sessionStorage.setItem(btoa('client'), JSON.stringify(data));
+            this.dialogRef.close();
+            window.location.reload();
+          } else {
+            this.message = resp.message;
+          }
         }
       )
     }

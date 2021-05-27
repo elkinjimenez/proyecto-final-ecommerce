@@ -7,7 +7,7 @@
       <a mat-list-item routerLink="/dashboard/category/list">Categorías</a>
       <a mat-list-item routerLink="/dashboard/product/list">Productos</a>
       <a mat-list-item routerLink="/dashboard/client/list">Clientes</a>
-      <a mat-list-item routerLink="dashboard/sales/list">Ventas</a>
+      <a mat-list-item routerLink="dashboard/sales/list" style="font-weight: bold;">Ventas</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,6 +20,7 @@
         <span>app-ecommerce</span>
       </div>
       <div>
+        <span></span>
         <a (click)="logout()" style="text-decoration: none; color: #ffd1d1; cursor: pointer;">Cerrar sesión</a>
       </div>
     </mat-toolbar>

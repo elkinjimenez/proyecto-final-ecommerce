@@ -18,6 +18,7 @@ import { ModalFinallyBuyComponent } from './modal-finally-buy/modal-finally-buy.
 import { MyShoppingComponent } from './my-shopping/my-shopping.component';
 import { ViewMyShoppingComponent } from './view-my-shopping/view-my-shopping.component';
 import { ModalInvoiceComponent } from './modal-invoice/modal-invoice.component';
+import { SharedModule } from '../Shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ModalInvoiceComponent } from './modal-invoice/modal-invoice.component';
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports:[
     LandingPagesComponent,
