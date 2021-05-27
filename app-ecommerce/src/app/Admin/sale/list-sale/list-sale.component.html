@@ -4,8 +4,6 @@
     <h2>{{c.client.user}}</h2>
   </div>
   <div>
-    <!-- <button mat-raised-button color="primary" routerLink="/dashboard/product/edit/{{c.id}}">Confirmar compra</button> -->
-    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Cancelar compra</button>
-    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Confirmar compra</button>
+    <button routerLink="/dashboard/sales/view/{{c.id}}" mat-raised-button color="primary">Ver compra</button>
   </div>
 </div>

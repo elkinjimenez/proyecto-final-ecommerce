@@ -15,6 +15,7 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { ModalFinallyBuyComponent } from './modal-finally-buy/modal-finally-buy.component';
+import { MyShoppingComponent } from './my-shopping/my-shopping.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalFinallyBuyComponent } from './modal-finally-buy/modal-finally-buy.
     HomeComponent,
     ModalLoginComponent,
     ModalFinallyBuyComponent,
+    MyShoppingComponent,
   ],
   imports: [
     CommonModule,

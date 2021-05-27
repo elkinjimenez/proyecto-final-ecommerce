@@ -1,0 +1,30 @@
+<button mat-raised-button routerLink="/dashboard/sales/list" color="primary">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+  Volver
+</button>
+<div class="items-between">
+  <div>
+    <h1 style="margin-top: 10px;"> Productos de la venta</h1>
+  </div>
+  <div class="items-end">
+    <div>
+      <div class="items-end">
+        <button [disabled]="!(message == '')" mat-raised-button routerLink="/dashboard/product/list" color="primary">
+          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon> -->
+          Confimar compra
+        </button>
+      </div>
+      <div>
+        <h3 class="text-danger" *ngIf="message != ''">{{message}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let c of listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.product.name}}</h2>
+  </div>
+  <div>
+    <h2 [ngClass]="{'text-danger': c.amount > c.product.stock}">{{c.amount}} und. / {{c.product.stock}}</h2>
+  </div>
+</div>

@@ -53,7 +53,8 @@ module.exports = {
                 return res.send({
                   'success': true,
                   token: token,
-                  id: user.id
+                  id: user.id,
+                  user: user.user
                 })
               })
           })

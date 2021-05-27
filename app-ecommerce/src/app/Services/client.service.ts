@@ -8,12 +8,14 @@ import { Client } from '../Interfaces/client';
 export class ClientService {
 
   logueado = false;
+  client = {} as Client;
 
   constructor(
     private http: HttpClient,
   ) {
     if (sessionStorage.getItem(btoa('client')) || sessionStorage.getItem(btoa('user'))) {
       this.logueado = true;
+      this.client = JSON.parse(sessionStorage.getItem(btoa('client'))) as Client;
     } else {
       this.logueado = false;
     }

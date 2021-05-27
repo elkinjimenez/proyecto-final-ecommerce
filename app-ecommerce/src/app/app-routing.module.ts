@@ -7,7 +7,9 @@ import { AddStockProductComponent } from './Admin/product/add-stock-product/add-
 import { FormProductComponent } from './Admin/product/form-product/form-product.component';
 import { ListProductComponent } from './Admin/product/list-product/list-product.component';
 import { ListSaleComponent } from './Admin/sale/list-sale/list-sale.component';
+import { ViewSaleComponent } from './Admin/view-sale/view-sale.component';
 import { HomeComponent } from './Public/home/home.component';
+import { MyShoppingComponent } from './Public/my-shopping/my-shopping.component';
 import { ProductsComponent } from './Public/products/products.component';
 import { ShoppingCartComponent } from './Public/shopping-cart/shopping-cart.component';
 
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'my-shopping', component: MyShoppingComponent },
 
   // PRIVATE
   { path: 'dashboard', component: LandingAdminComponent },
@@ -29,6 +32,7 @@ const routes: Routes = [
   { path: 'dashboard/product/stock/:id', component: AddStockProductComponent },
 
   { path: 'dashboard/sales/list', component: ListSaleComponent },
+  { path: 'dashboard/sales/view/:id', component: ViewSaleComponent },
 ];
 
 @NgModule({

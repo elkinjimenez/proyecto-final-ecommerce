@@ -3,7 +3,12 @@
   <a routerLink="/products" class="items-nav">Productos</a>
   <a routerLink="/shopping-cart" class="items-nav">Mi carrito ({{_myCart.listAll.length}})</a>
   <a (click)="login()" *ngIf="!_client.logueado" class="items-nav">Inicio de sesión</a>
-  <a (click)="logout()" *ngIf="_client.logueado" class="items-nav" style="color: #f3c9c9;">Cerrar sesión</a>
+  <a *ngIf="_client.logueado" [matMenuTriggerFor]="menu" class="items-nav">{{_client.client.user}} ▾</a>
+  <mat-menu #menu="matMenu">
+    <button style="margin: 0 !important" routerLink="/my-shopping" mat-menu-item>Mis compras</button>
+    <button style="margin: 0 !important; color: red; font-weight: bold;" (click)="logout()" mat-menu-item>Cerrar
+      sesión</button>
+  </mat-menu>
 </nav>
 <div style="padding: 10px;">
   <router-outlet></router-outlet>

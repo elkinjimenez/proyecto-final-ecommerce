@@ -1,0 +1,10 @@
+<h1>Mis compras</h1>
+<div *ngFor="let c of listAll" class="items-between myCard">
+  <div>
+    <h2>{{c.client.user}}</h2>
+  </div>
+  <div>
+    <button (click)="remove(c.id)" *ngIf="c.state" mat-raised-button color="warn">Cancelar compra</button>
+    <button (click)="remove(c.id)" *ngIf="!c.state" mat-raised-button color="primary">Confirmar compra</button>
+  </div>
+</div>

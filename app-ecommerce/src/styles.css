@@ -59,7 +59,7 @@ button {
   margin: 0 5px !important;
 }
 
-h2, h5 {
+h2, h5, h3 {
   margin: 0 !important;
 }
 
@@ -71,4 +71,9 @@ h2, h5 {
 
 .float-end {
   float: right !important;
+}
+
+.text-danger{
+  color: red;
+  font-weight: bold !important;
 }
