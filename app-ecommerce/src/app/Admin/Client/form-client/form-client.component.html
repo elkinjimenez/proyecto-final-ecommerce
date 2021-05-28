@@ -1,4 +1,4 @@
-<button mat-raised-button routerLink="/dashboard/client/list" color="primary">
+<button *ngIf="util.private" mat-raised-button routerLink="/dashboard/client/list" color="primary">
   <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
   Volver {{objPerson.id}}
 </button>

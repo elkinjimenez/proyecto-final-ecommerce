@@ -5,6 +5,9 @@ import { Person } from 'src/app/Interfaces/person';
 import { Client } from 'src/app/Interfaces/client';
 import { ClientService } from 'src/app/Services/client.service';
 import { PersonService } from 'src/app/Services/person.service';
+import { UtilService } from 'src/app/Services/util.service';
+import { ModalLoginComponent } from 'src/app/Public/modal-login/modal-login.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form-client',
@@ -24,6 +27,8 @@ export class FormClientComponent implements OnInit {
     public _person: PersonService,
     private route: ActivatedRoute,
     private ro: Router,
+    public util: UtilService,
+    public dialog: MatDialog,
   ) {
     this.idObj = this.route.snapshot.params.id;
     this.rFormsObj = fb.group({
@@ -94,13 +99,25 @@ export class FormClientComponent implements OnInit {
             clientD => {
               console.log('Client create: ', clientD);
               if ((clientD as any).success == true) {
-                this.ro.navigate(['/dashboard/client/list']);
+                if(this.util.private){
+                  this.ro.navigate(['/dashboard/client/list']);
+                }else{
+                  this.ro.navigate(['/']);
+                  this.login();
+                }
               }
             }
           )
         }
       }
     )
+  }
+
+  login() {
+    const dialogRef = this.dialog.open(ModalLoginComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 

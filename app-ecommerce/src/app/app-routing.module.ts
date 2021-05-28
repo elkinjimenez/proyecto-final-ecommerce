@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'my-shopping', component: MyShoppingComponent },
   { path: 'my-shopping/view/:id', component: ViewMyShoppingComponent },
+  { path: 'register', component: FormClientComponent },
 
   // PRIVATE
   { path: 'dashboard', component: LandingAdminComponent },

@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing/landing.component';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
-
-
 @NgModule({
   declarations: [
     LandingComponent
