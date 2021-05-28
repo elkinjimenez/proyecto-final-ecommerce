@@ -1,4 +1,4 @@
-import { ObjGeneral } from "../Interfaces/obj-general";
+import { ObjGeneral } from "./obj-general";
 
 export interface Person extends ObjGeneral {
   address: string;

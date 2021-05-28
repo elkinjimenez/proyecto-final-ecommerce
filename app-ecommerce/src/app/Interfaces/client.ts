@@ -1,4 +1,4 @@
-import { Person } from "../Interface/person";
+import { Person } from "./person";
 import { ObjGeneral } from "./obj-general";
 
 export interface Client extends ObjGeneral {
